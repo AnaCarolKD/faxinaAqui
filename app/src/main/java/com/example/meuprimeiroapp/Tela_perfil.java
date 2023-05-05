@@ -43,7 +43,6 @@ public class Tela_perfil extends AppCompatActivity {
             }
         });
     }
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -58,13 +57,11 @@ public class Tela_perfil extends AppCompatActivity {
                 if (documentSnapshot != null){
                     nomeUsuario.setText(documentSnapshot.getString("nome"));
                     emailUsuario.setText(email);
+                    setContentView(R.layout.activity_tela_servicos);
                 }
             }
         });
-
-
     }
-
     private void IniciarComponentes(){
         nomeUsuario = findViewById(R.id.textNomeUsuario);
         emailUsuario = findViewById(R.id.textEmailUsuario);

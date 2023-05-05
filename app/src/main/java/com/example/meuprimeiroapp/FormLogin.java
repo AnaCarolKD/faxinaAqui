@@ -1,9 +1,11 @@
 package com.example.meuprimeiroapp;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -19,14 +21,21 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class FormLogin extends AppCompatActivity {
+
+    private Button btnPrestarServico, btnSolicitarServico;
+    private PrestarServicoFragment prestarServicoFragment;
+    private SolicitarServicosFragment solicitarServicosFragment;
+
 
     private TextView text_tela_cadastro;
     private EditText edit_email,edit_senha;
     private Button bt_entrar;
     private ProgressBar progressBar;
     String[] mensagens = {"Preencha todos os campos"};
+
 
 
     @Override
@@ -36,6 +45,8 @@ public class FormLogin extends AppCompatActivity {
 
         getSupportActionBar().hide();
         IniciarComponentes();
+
+
 
         text_tela_cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,9 +96,11 @@ public class FormLogin extends AppCompatActivity {
         });
     }
 
+
     private void TelaPrincipal(){
         Intent intent = new Intent(FormLogin.this, Tela_perfil.class);
         startActivity(intent);
+
         finish();
     }
     private void IniciarComponentes(){

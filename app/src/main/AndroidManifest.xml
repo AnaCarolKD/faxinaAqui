@@ -12,6 +12,12 @@
         android:theme="@style/Theme.MeuPrimeiroApp"
         tools:targetApi="31">
         <activity
+            android:name=".NotificacaoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Tela_Servicos"
+            android:exported="false" />
+        <activity
             android:name=".Tela_perfil"
             android:exported="false" />
         <activity
